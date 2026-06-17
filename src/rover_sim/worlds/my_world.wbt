@@ -105,6 +105,7 @@ Robot {
     name "camera"
     width 640
     height 480
+    fps 20
     fieldOfView 1.0
   }
     DistanceSensor {

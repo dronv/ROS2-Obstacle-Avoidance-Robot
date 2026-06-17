@@ -1,0 +1,4 @@
+rtabmap:
+  ros__parameters:
+    frame_id: base_link
+    subscribe_depth: false
