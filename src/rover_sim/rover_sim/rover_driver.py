@@ -8,6 +8,7 @@ from geometry_msgs.msg import TransformStamped
 
 HALF_DISTANCE_BETWEEN_WHEELS = 0.045
 WHEEL_RADIUS = 0.025
+SPEED_MULTIPLIER = 3.0
 class RoverDriver:
     def init(self, webots_node, properties):
         self.__robot = webots_node.robot
@@ -51,8 +52,8 @@ class RoverDriver:
         forward_speed = self.__target_twist.linear.x
         angular_speed = self.__target_twist.angular.z
 
-        command_motor_left = (forward_speed - angular_speed * HALF_DISTANCE_BETWEEN_WHEELS)/ WHEEL_RADIUS
-        command_motor_right = (forward_speed + angular_speed * HALF_DISTANCE_BETWEEN_WHEELS) / WHEEL_RADIUS
+        command_motor_left = ((forward_speed - angular_speed * HALF_DISTANCE_BETWEEN_WHEELS)/ WHEEL_RADIUS) * SPEED_MULTIPLIER
+        command_motor_right = ((forward_speed + angular_speed * HALF_DISTANCE_BETWEEN_WHEELS) / WHEEL_RADIUS) * SPEED_MULTIPLIER
 
         self.__left_motor.setVelocity(command_motor_left)
         self.__right_motor.setVelocity(command_motor_right)

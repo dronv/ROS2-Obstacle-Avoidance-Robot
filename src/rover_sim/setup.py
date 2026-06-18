@@ -11,7 +11,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + '/launch', ['launch/robot_launch.py']),
-        ('share/' + package_name + '/worlds', ['worlds/my_world.wbt']),
+        ('share/' + package_name + '/worlds', ['worlds/apartment.wbt']),
         ('share/' + package_name + '/resource', ['resource/my_robot.urdf']),
     ],
     install_requires=['setuptools'],
